@@ -109,7 +109,7 @@ class: split-two white
 <br>
 <br>
 Comparison of Enzymatic purification and GESAMP protocol
-Replication of the methods from the article: [Enzymatic Purification of Microplastics in Environmental Samples](https://pubs.acs.org/doi/abs/10.1021/acs.est.7b03055).
+Replication of the methods from the article: [Enzymatic Purification of Microplastics in Environmental Samples](https://sci-hub.se/10.1021/acs.est.7b03055).
 
 <br>
   .img-fill[![](images/BASEMAN-1.png)]
