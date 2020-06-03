@@ -33,6 +33,7 @@ class: split-33
 <br>
 <br>
 .font-mono[Estimates in tonnes]
+
 ]]]
 
 .column[
@@ -102,10 +103,46 @@ class: split-33
 
 ---
 
+class: split-two with-thick-border border-cyan
+.column.bg-white[
+  .split-two[
+.row.bg-white[.content.vmiddle[.center[
+  .nopadding[
+.img-fill[![](https://raw.githubusercontent.com/harkanatta/innragrunn/master/docs/images/biopol_synataka.jpg)]
+]
+  ]]]
+  .row.bg-white[.content.vmiddle[.center[
+  .nopadding[
+.img-fill[![](images/biopol_karin.jpg)]
+]
+  ]]]
+]]
+
+.column.bg-main1[.content.center.vmiddle[
+# Microplastic Sampling
+# .deep-orange[Skagaströnd] 
+## .white[<span class=" faa-pulse animated-hover " style=" display: -moz-inline-stack; display: inline-block; transform: rotate(0deg);"> [skʰaːɣastrœn̥d] </span>]
+<br><br>
+
+```{r logo, echo=FALSE, message=FALSE, warning=FALSE, cache=FALSE,out.width = '50%'}
+mynd <- knitr::include_graphics("images/avatar.jpg")
+mynd
+```
+
+]]
+
+???
+Environmental sampling with a 125 μm zooplankton net
+Notice the rope :)
+
+
+
+---
+
 layout: false
 class: split-two white
 .column.bg-main1[.content[
-## .black[Our little] .orange[comparison study] .black[between the ] .orange[ BASEMAN protocol] .black[And an] .orange[ ENZYMATIC ] .black[purification of environmental samples]
+## .black[Our little] .orange[comparison study] .black[between the ] .orange[ BASEMAN protocol] .black[and an] .orange[ ENZYMATIC purification] .black[ of environmental samples]
 <br>
 <br>
 Comparison of Enzymatic purification and GESAMP protocol
@@ -125,4 +162,16 @@ Replication of the methods from the article: [Enzymatic Purification of Micropla
 <br>
   .img-fill[![](images/unnamed-chunk-1-1.png)]
 ]]
+
+???
+BASEMAN (Chemical degradation)
+10 % potassium hydroxide solution (KOH)
+10 % hydrogen peroxide (H2O2)
+
+Löder 2017 (Enzymatic Purification)
+chitinase, proteinase, and cellulase
+
+We need to increase our sampling volume. For that purpose we added a Manta net to our fleet (333 μm).
+
+
   
