@@ -1,0 +1,128 @@
+---
+title: "Örplast"
+subtitle: "BioPol á Skagaströnd"
+favicon: images/favicon.ico
+author:   |
+  <br><br>
+  <span class="noem">Valtýr Sigurðsson</span>
+  <br><br>
+  <img src="images/tvologohex.png" width="15%" align="right" />
+  <br><br>
+  
+date: "<br><br>2019-09-05, Uppfært: `r format(Sys.time(), '%e. %B %Y')`"
+lang: is
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["kunoichiB", "ninjutsuB"]
+    self_contained: false
+    nature:
+      ratio: "16:9"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+class: split-33
+
+.column.bg-main2[
+.content.vmiddle[
+.center[
+# Main Sources of Microplastics
+<br>
+<br>
+.font-mono[Estimates in tonnes]
+]]]
+
+.column[
+.content[
+.center[
+  
+```{r echo=FALSE, message=FALSE, warning=FALSE, cache=FALSE, out.height="100%"}
+    #losun <- (l+h)/2 #Meðaltal lægra og hærra mats á losun.
+    value <- c(371, 41, 26, 33.2, 60, 3, 0.2, 8.2, 0.34, 1, 0.002) #Uppspretta lægra mat
+    losun <- c(164, 5.7,  0, 15.2, 3.2, 0.3, 0, 8.2, 0.34, 0, 0.002) #losun lægra mat
+    #value <- c(379,586,38,233,21,48,3,11,8,32,0.3,3)
+    heiti <- c('Car tires ',
+               'Road paint ',
+               'Airplane tires ',
+               'House paint ',
+               'Ship paint ',
+               'Artificial turf ',
+               'Playgrounds ',
+               'Laundry ',
+               'Cosmetics ',
+               'Hail shots ',
+               'Landfill leachates ')
+    land <- value-losun
+    df <- data.frame(heiti,land,losun)
+    df <- df[order(df$heiti),]
+    
+    library(networkD3)
+    nodes <- c(levels(df$heiti), 'Land','Sea')
+    nodes <- as.data.frame(nodes)
+    names(nodes) <- "name"
+    
+    a <- list()
+    for (i in 1:nrow(df)) {
+      a[i] <- list(rbind(matrix(c(df[i,c(2,3)]))))
+    }
+    b <- do.call(c,a)
+    value <- unlist(b)
+    
+    links <- 
+      data.frame(
+        source=c(0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10),
+        target=c(rep(c(11,12),11)),
+        value=value)
+    
+    
+    Sank <- list(nodes, links)
+    names(Sank) <- c('nodes', 'links')
+    sn <- sankeyNetwork(
+      Links = Sank$links,
+      Nodes = Sank$nodes,
+      Source = "source",
+      Target = "target",
+      Value = "value",
+      NodeID = "name",
+      units = "tonn",
+      colourScale = JS("d3.scaleOrdinal(d3.schemeCategory20);"),
+      fontSize = 20,
+      nodeWidth = 30, height = "681px", fontFamily = "Monospace"
+    )
+    rammi <- widgetframe::frameWidget(sn)
+    rammi
+    
+```
+    
+]]]
+
+
+---
+
+layout: false
+class: split-two white
+.column.bg-main1[.content[
+## .black[Our little] .orange[comparison study] .black[between the ] .orange[ BASEMAN protocol] .black[And an] .orange[ ENZYMATIC ] .black[purification of environmental samples]
+<br>
+<br>
+Comparison of Enzymatic purification and GESAMP protocol
+Replication of the methods from the article: [Enzymatic Purification of Microplastics in Environmental Samples](https://pubs.acs.org/doi/abs/10.1021/acs.est.7b03055).
+
+<br>
+  .img-fill[![](images/BASEMAN-1.png)]
+<br>
+  .img-fill[![](images/Enzymatic-1.png)]
+
+]]
+
+.column.bg-main2[.content[
+<br>
+<br>
+<br>
+<br>
+  .img-fill[![](images/unnamed-chunk-1-1.png)]
+]]
+  
