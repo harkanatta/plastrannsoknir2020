@@ -128,11 +128,13 @@ class: split-two with-thick-border border-cyan
 mynd <- knitr::include_graphics("images/avatar.jpg")
 mynd
 ```
-
 ]]
 
 ???
+[BioPol report](https://harkanatta.github.io/MPprotocol/)
+
 Environmental sampling with a 125 μm zooplankton net
+
 Notice the rope :)
 
 
@@ -165,10 +167,13 @@ Replication of the methods from the article: [Enzymatic Purification of Micropla
 
 ???
 BASEMAN (Chemical degradation)
+
 10 % potassium hydroxide solution (KOH)
+
 10 % hydrogen peroxide (H2O2)
 
 Löder 2017 (Enzymatic Purification)
+
 chitinase, proteinase, and cellulase
 
 We need to increase our sampling volume. For that purpose we added a Manta net to our fleet (333 μm).
